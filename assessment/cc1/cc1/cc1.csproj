@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>cc1.que4</StartupObject>
+    <StartupObject>cc1.que3</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="que1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="que3.cs" />
     <Compile Include="que4.cs" />
   </ItemGroup>
   <ItemGroup>
