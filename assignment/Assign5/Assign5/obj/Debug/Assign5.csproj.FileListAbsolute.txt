@@ -1,0 +1,7 @@
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\bin\Debug\Assign5.exe.config
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\bin\Debug\Assign5.exe
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\bin\Debug\Assign5.pdb
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\obj\Debug\Assign5.csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\obj\Debug\Assign5.csproj.CoreCompileInputs.cache
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\obj\Debug\Assign5.exe
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Assign5\Assign5\obj\Debug\Assign5.pdb
