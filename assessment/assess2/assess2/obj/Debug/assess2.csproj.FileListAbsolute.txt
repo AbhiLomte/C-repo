@@ -1,0 +1,6 @@
+C:\Users\abhisheklo\Documents\Traning_material\assignment\assess2\assess2\bin\Debug\assess2.exe.config
+C:\Users\abhisheklo\Documents\Traning_material\assignment\assess2\assess2\bin\Debug\assess2.exe
+C:\Users\abhisheklo\Documents\Traning_material\assignment\assess2\assess2\bin\Debug\assess2.pdb
+C:\Users\abhisheklo\Documents\Traning_material\assignment\assess2\assess2\obj\Debug\assess2.csproj.CoreCompileInputs.cache
+C:\Users\abhisheklo\Documents\Traning_material\assignment\assess2\assess2\obj\Debug\assess2.exe
+C:\Users\abhisheklo\Documents\Traning_material\assignment\assess2\assess2\obj\Debug\assess2.pdb
