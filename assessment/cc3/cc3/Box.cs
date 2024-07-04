@@ -1,6 +1,7 @@
 ﻿using System;
 
-public class Box
+
+class Box
 {
     
     public double Length { get; set; }
@@ -16,17 +17,33 @@ public class Box
     
     public static Box AddBoxes(Box box1, Box box2)
     {
-        double resultLength = box1.Length + box2.Length;
-        double resultBreadth = box1.Breadth + box2.Breadth;
-
-        return new Box(resultLength, resultBreadth);
+        double newLength = box1.Length + box2.Length;
+        double newBreadth = box1.Breadth + box2.Breadth;
+        return new Box(newLength, newBreadth);
     }
 
     
-    public void DisplayBoxDetails()
+    public void DisplayBox()
     {
-        Console.WriteLine($"Box Details:");
-        Console.WriteLine($"Length: {Length} units");
-        Console.WriteLine($"Breadth: {Breadth} units");
+        Console.WriteLine($"Box: Length = {Length}, Breadth = {Breadth}");
+    }
+}
+
+
+class Test
+{
+    static void Main()
+    {
+        
+        Box box1 = new Box(2.6, 6.8);
+        Box box2 = new Box(4.0, 6.5);
+
+        
+        Box box3 = Box.AddBoxes(box1, box2);
+
+        
+        Console.WriteLine("Details of box3:");
+        box3.DisplayBox();
+        Console.Read();
     }
 }
