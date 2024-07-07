@@ -1,0 +1,7 @@
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\bin\Debug\Demo.exe.config
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\bin\Debug\Demo.exe
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\bin\Debug\Demo.pdb
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\obj\Debug\Demo.csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\obj\Debug\Demo.csproj.CoreCompileInputs.cache
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\obj\Debug\Demo.exe
+C:\Users\abhisheklo\Documents\Traning_material\assignment\Demo\Demo\obj\Debug\Demo.pdb
