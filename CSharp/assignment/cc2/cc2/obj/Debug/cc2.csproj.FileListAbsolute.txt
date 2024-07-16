@@ -1,2 +1,0 @@
-C:\Users\abhisheklo\Documents\Traning_material\assignment\cc2\cc2\obj\Debug\cc2.csproj.AssemblyReference.cache
-C:\Users\abhisheklo\Documents\Traning_material\assignment\cc2\cc2\obj\Debug\cc2.csproj.CoreCompileInputs.cache
