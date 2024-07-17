@@ -1,0 +1,132 @@
+use InfiniteDB 
+drop table if exists EMP1
+drop table if exists dept1
+Create table EMP1
+(
+empno int,
+ename varchar(30),
+job varchar(30),
+mgrid int,
+hiredate datetime,
+sal float,
+comm varchar(30),
+deptno int 
+)
+Insert into EMP1(empno, ename, job, mgrid, hiredate, sal, comm, deptno)  values
+(7369  ,'SMITH','CLERK',	      		7902   	,	'17-DEC-80' ,    	 800	,'',         20),
+(7499 ,  'ALLEN',    'SALESMAN',    		 7698,   	'20-FEB-81',    	 1600  ,'   300 ',   30),
+(7521,  'WARD',	'SALESMAN',        	7698 ,   	'22-FEB-81',  	 1250,    '500',   30),
+(7566 , 'JONES',   'MANAGER',       	7839 ,  	 	'02-APR-81' ,  	 2975, '' ,          20),
+(7654,   ' MARTIN',  'SALESMAN',     		 7698,   	 '28-SEP-81',  	 1250 ,'1400',    30),
+(7698,	'BLAKE',    'MANAGER', 	   	 7839, 	    	 '01-MAY-81',       2850,'',            30),
+(7782 , 	'CLARK',    'MANAGER',      		 7839  ,  	'09-JUN-81',   	 2450 ,'',           10),
+(7788,  	'SCOTT',     'ANALYST',      		 7566   ,	'19-APR-87 ',     3000,'',             20),
+(7839 ,   'KING',      'PRESIDENT',            	null		,'17-NOV-81',      5000,''  ,           10),
+(7844 ,   'TURNER',   'SALESMAN',      	7698,    	'08-SEP-81',    	 1500,     ' 0'   ,  30),
+(7876 ,   'ADAMS',    'CLERK' ,        	7788  ,  	'23-MAY-87',        1100,  '',          20),
+(7900 ,   'JAMES' ,    'CLERK',        		 7698 ,  	 '03-DEC-81',  	 950, '',            30),
+(7902,    'FORD',     'ANALYST',     		  7566,   	 '03-DEC-81',   	 3000, '',           20),
+(7934 ,  'MILLER',   'CLERK',        		 7782 ,   	'23-JAN-82',	 1300,'',            10)
+select * from EMP1
+create table Dept1
+(
+deptno int,
+dname varchar(30),
+loc varchar(30)
+)
+Insert into Dept1 values
+(10 ,'ACCOUNTING','    NEW YORK' ),
+(20 , 'RESEARCH', '     DALLAS' ),
+(30,    'SALES',        ' CHICAGO' ),
+(40 ,   'OPERATIONS ',  ' BOSTON' )
+select * from Dept1
+--1
+select ename from EMP1 where ename like 'A%'
+--2
+select ename from EMP1  where mgrid is null
+--3
+select ename,comm,sal from EMP1 where sal between 1200 and 1400
+--4
+-- Step 1: List Employee Details Before the Pay Rise
+SELECT e.empno, e.ename, e.job, e.mgrid, e.hiredate, e.sal AS old_salary, e.comm, e.deptno, d.dname
+FROM EMP1 e
+JOIN Dept1 d ON e.deptno = d.deptno
+WHERE d.dname = 'RESEARCH';
+
+-- Step 2: Apply the Pay Rise
+UPDATE EMP1
+SET sal = sal * 1.1  -- Increase salary by 10%
+WHERE deptno IN (SELECT deptno FROM Dept1 WHERE dname = 'RESEARCH');
+
+-- Step 3: Verify the Pay Rise
+SELECT e.empno, e.ename, e.job, e.mgrid, e.hiredate, e.sal AS new_salary, e.comm, e.deptno, d.dname
+FROM EMP1 e
+JOIN Dept1 d ON e.deptno = d.deptno
+WHERE d.dname = 'RESEARCH';
+
+--5
+select Count(*) from EMP1 where job = 'CLERK'
+--6
+SELECT 
+    job,
+    COUNT(*) AS number_of_employees,
+    AVG(sal) AS average_salary
+FROM EMP1
+GROUP BY job;
+--7
+-- Query to find employees with the lowest salary
+SELECT empno, ename, job, sal
+FROM EMP1
+WHERE sal = (SELECT MIN(sal) FROM EMP1);
+
+-- Query to find employees with the highest salary
+SELECT empno, ename, job, sal
+FROM EMP1
+WHERE sal = (SELECT MAX(sal) FROM EMP1);
+--8
+SELECT *
+FROM Dept1 d
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM EMP1 e
+    WHERE e.deptno = d.Deptno
+);
+--9
+SELECT ename, sal
+FROM EMP1
+WHERE job = 'Analyst'
+    AND sal > 1200
+    AND deptno = 20
+ORDER BY ename ASC;
+--10
+SELECT d.dname, d.deptno, SUM(e.sal) AS total_sal
+FROM dept1 d
+LEFT JOIN EMP1 e ON d.deptno = e.deptno
+GROUP BY d.dname, d.deptno
+ORDER BY d.deptno;
+--11
+SELECT ename, sal
+FROM EMP1
+WHERE ename IN ('MILLER', 'SMITH');
+--12
+SELECT ename
+FROM EMP1
+WHERE ename LIKE 'A%' OR ename LIKE 'M%';
+--13
+select sal*12 from EMP1 where ename = 'SMITH'
+--14
+SELECT ename, sal
+FROM EMP1
+WHERE sal < 1500 OR sal > 2850;
+--15
+SELECT e.ename AS manager_name, COUNT(*) AS num_reports
+FROM EMP1 e
+JOIN EMP1 emp ON e.empno = emp.mgrid
+GROUP BY e.empno, e.ename
+HAVING COUNT(*) > 2;
+
+
+
+
+
+
