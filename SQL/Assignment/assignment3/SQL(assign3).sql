@@ -80,3 +80,31 @@ SELECT ename AS Employee
 FROM EMP1
 WHERE (ename LIKE '%L%L%' OR ename LIKE '%L%L%')
   AND (deptno = 30 OR mgrid = 7782);
+  --16
+  SELECT 
+    ename,
+    DATEDIFF(day,CURDATE(), hiredate) / 365 AS experience_in_years
+FROM 
+    Emp
+WHERE 
+    DATEDIFF(day,CURDATE(), hiredate) / 365 BETWEEN 30 AND 39;
+--17
+SELECT 
+    d.dname AS Department,
+    e.ename AS Employee
+FROM 
+    Departments d
+LEFT JOIN 
+    Employees e ON d.deptno = e.Deptno
+ORDER BY 
+    d.dname ASC,
+    e.ename DESC;
+
+
+
+--18 
+Select ename as employee, hiredate 
+months_between('2024-07-18',hiredate)
+from EMP1
+where ename ='MILLER'
+select dname,deptno from Dept1
