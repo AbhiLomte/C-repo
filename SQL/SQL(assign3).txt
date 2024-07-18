@@ -86,3 +86,4 @@ Select ename as employee, hiredate
 months_between('2024-07-18',hiredate)
 from EMP1
 where ename ='MILLER'
+select dname,deptno from Dept1
