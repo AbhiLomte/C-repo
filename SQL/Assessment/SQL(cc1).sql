@@ -1,7 +1,14 @@
 use infiniteDB
 --1
-create table dayofweek ( id int PRIMARY KEY,
-name VARCHAR(50), birthday DATE);
+drop table if exists birthday
+create table birthday
+(
+NAME varchar(30),
+DOB date
+)
+insert into birthday values
+('Abhishek','1997-10-19')
+select dayofweek(DOB) from birthday
  
 insert into dayofweek (id, name, birthday) values(1, 'Abhishek Lomte','1997-10-19');
  
@@ -9,7 +16,7 @@ select birthday from dayofweek where name = 'Abhishek Lomte';
 --2
 select DATEDIFF(DAY, '1997-10-19', '2024-07-17') as datedifference;
 --3
-create table Employee
+create table Emp1
 (
 empno int,
 ename varchar(30),
