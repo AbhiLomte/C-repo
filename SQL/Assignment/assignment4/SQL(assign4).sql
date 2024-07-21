@@ -1,7 +1,6 @@
 --1
 -- Define a stored procedure to calculate factorial
-CREATE PROCEDURE CalculateFactorial
-    @n INT
+CREATE or ALTER PROCEDURE CalculateFactorial( @n INT)
 AS
 BEGIN
     -- Check if the input number is non-negative
@@ -39,7 +38,7 @@ BEGIN
     FROM @factorials
     WHERE number = @n;
 END;
-GO
+
 
 -- Example usage: Calculate factorial of a number (e.g., 5)
 EXEC CalculateFactorial @n = 5;
@@ -47,46 +46,26 @@ EXEC CalculateFactorial @n = 5;
 
 
 --2
-DELIMITER //
 
-CREATE PROCEDURE GenerateMultiplicationTable(
-    IN multiplier INT,
-    IN max_number INT
-)
+CREATE PROCEDURE GenerateMultiplicationTable
+    @Multiplier INT,
+    @UpTo INT
+AS
 BEGIN
-    DECLARE counter INT DEFAULT 1;
+    DECLARE @Counter INT = 1;
     
-    -- Ensure input validity
-    IF multiplier <= 0 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Multiplier should be greater than zero';
-    END IF;
-    
-    IF max_number <= 0 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Max number should be greater than zero';
-    END IF;
+    PRINT 'Multiplication Table for ' + CAST(@Multiplier AS NVARCHAR(10)) + ' up to ' + CAST(@UpTo AS NVARCHAR(10));
+    PRINT '----------------------------------------';
 
-    -- Create a temporary table to store the results
-    DROP TEMPORARY TABLE IF EXISTS multiplication_table;
-    CREATE TEMPORARY TABLE multiplication_table (
-        multiplicand INT,
-        product INT
-    );
+    WHILE @Counter <= @UpTo
+    BEGIN
+        DECLARE @Result INT = @Multiplier * @Counter;
+        PRINT CAST(@Multiplier AS NVARCHAR(10)) + ' * ' + CAST(@Counter AS NVARCHAR(10)) + ' = ' + CAST(@Result AS NVARCHAR(10));
+        SET @Counter = @Counter + 1;
+    END
+END
+EXEC GenerateMultiplicationTable @Multiplier = 5, @UpTo = 10;
 
-    -- Loop to generate multiplication table
-    WHILE counter <= max_number DO
-        INSERT INTO multiplication_table (multiplicand, product)
-        VALUES (counter, counter * multiplier);
-        
-        SET counter = counter + 1;
-    END WHILE;
-
-    -- Select the multiplication table from the temporary table
-    SELECT * FROM multiplication_table;
-
-    -- Drop the temporary table after use
-    DROP TEMPORARY TABLE multiplication_table;
-    
-END //
 
 --3
 create table holidays
@@ -102,25 +81,32 @@ Insert into holidays values
 ('2024-05-01','May day'),
 ('2024-08-15','Independence day'),
 ('2024-10-24','Diwali holiday')
-DELIMITER //
-
-CREATE TRIGGER RestrictOnHolidays
-BEFORE INSERT ON EMP
-FOR EACH ROW
+drop table if exists holidays
+select * from holidays
+-- Step 1: Define the trigger
+CREATE TRIGGER TRG_RestrictDataManipulation
+ON EMP
+AFTER INSERT, UPDATE, DELETE
+AS
 BEGIN
-    DECLARE holiday_exists INT;
-    
-    -- Check if the current date is a holiday
-    SELECT COUNT(*) INTO holiday_exists
-    FROM Holidays
-    WHERE holiday_date = CURDATE();
-    
-    -- If it's a holiday, prevent the operation and display error message
-    IF holiday_exists > 0 THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = CONCAT('Due to ', (SELECT holiday_name FROM Holidays WHERE holiday_date = CURDATE()), ' you cannot manipulate data');
-    END IF;
-END //
+    -- Step 2: Check if today is a holiday
+    DECLARE @Today DATE = GETDATE();
+    DECLARE @HolidayMessage NVARCHAR(200);
 
-DELIMITER ;
+    -- Check if today is Independence Day (August 15th) or Diwali (October 27th)
+    IF @Today = '2024-08-15'  -- Independence Day
+    BEGIN
+        SET @HolidayMessage = 'Due to Independence Day, you cannot manipulate data.';
+        RAISERROR(@HolidayMessage, 16, 1);
+        ROLLBACK;  -- Rollback the transaction
+    END
+    ELSE IF @Today = '2024-10-27'  -- Diwali
+    BEGIN
+        SET @HolidayMessage = 'Due to Diwali, you cannot manipulate data.';
+        RAISERROR(@HolidayMessage, 16, 1);
+        ROLLBACK;  -- Rollback the transaction
+    END
+END;
+
+
 
