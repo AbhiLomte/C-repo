@@ -85,7 +85,7 @@ drop table if exists holidays
 select * from holidays
 -- Step 1: Define the trigger
 CREATE TRIGGER TRG_RestrictDataManipulation
-ON EMP
+ON holidays
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN

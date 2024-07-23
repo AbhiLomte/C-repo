@@ -1,0 +1,2 @@
+C:\Users\abhisheklo\Documents\Traning_material\Region\Region\obj\Debug\Region.csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\Region\Region\obj\Debug\Region.csproj.CoreCompileInputs.cache
