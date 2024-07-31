@@ -1,0 +1,7 @@
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\bin\Debug\Linq(assign1).exe.config
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\bin\Debug\Linq(assign1).exe
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\bin\Debug\Linq(assign1).pdb
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\obj\Debug\Linq(assign1).csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\obj\Debug\Linq(assign1).csproj.CoreCompileInputs.cache
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\obj\Debug\Linq(assign1).exe
+C:\Users\abhisheklo\Documents\Traning_material\SQL\Linq(assign1)\Linq(assign1)\obj\Debug\Linq(assign1).pdb
