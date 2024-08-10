@@ -1,0 +1,7 @@
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\bin\Debug\Miniproject.exe.config
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\bin\Debug\Miniproject.exe
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\bin\Debug\Miniproject.pdb
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\obj\Debug\Miniproject.csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\obj\Debug\Miniproject.csproj.CoreCompileInputs.cache
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\obj\Debug\Miniproject.exe
+C:\Users\abhisheklo\Documents\Traning_material\Miniproject\Miniproject\obj\Debug\Miniproject.pdb
