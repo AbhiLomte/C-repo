@@ -1,0 +1,2 @@
+C:\Users\abhisheklo\Documents\Traning_material\MVC\CC1\CC1\obj\Debug\CC1.csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\MVC\CC1\CC1\obj\Debug\CC1.csproj.CoreCompileInputs.cache
