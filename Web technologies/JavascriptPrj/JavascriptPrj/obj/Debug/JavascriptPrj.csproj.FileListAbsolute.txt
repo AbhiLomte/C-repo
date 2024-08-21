@@ -1,0 +1,7 @@
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\bin\Debug\JavascriptPrj.exe.config
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\bin\Debug\JavascriptPrj.exe
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\bin\Debug\JavascriptPrj.pdb
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\obj\Debug\JavascriptPrj.csproj.AssemblyReference.cache
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\obj\Debug\JavascriptPrj.csproj.CoreCompileInputs.cache
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\obj\Debug\JavascriptPrj.exe
+C:\Users\abhisheklo\Documents\Traning_material\HTML\JavascriptPrj\JavascriptPrj\obj\Debug\JavascriptPrj.pdb
